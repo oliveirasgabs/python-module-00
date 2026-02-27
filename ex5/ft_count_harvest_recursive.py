@@ -1,10 +1,8 @@
-def	ft_count_harvest_recursive():
-	days = int(input("Days until harvest: "))
-	def nova_funcao(n):
-		if (n > days):
-			print("Harvest time!")
-			return
-		print("Day: {n}")
-		nova_funcao(n+1)
-
-ft_count_harvest_recursive()
+def ft_count_harvest_recursive(day=None, current=1):
+    if day is None:
+        day = int(input("Days until harvest: "))
+    if current > day:
+        print("Harvest time!")
+        return
+    print(f"Day: {current}")
+    ft_count_harvest_recursive(day, current + 1)
